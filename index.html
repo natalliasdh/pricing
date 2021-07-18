@@ -16,30 +16,32 @@
         </header>
         <main>
             <section class="interactive">
-                <div class="views"><span id="pageviews"></span> Pageviews</div>
-                <div class="price"><span id="pricenumber"></span>$ /month</div>
+                <div class="views"><span id="pageviews">100K</span> Pageviews</div>
+                <div class="price"><span id="pricenumber">16</span>$ /month</div>
                 <div class="slider">
-                    <input type="range" min="1" max="9" step="2" value="5" id="priceslider" ">
-       
+                    <input type="range" min="1" max="9" step="2" value="5" id="priceslider" onchange="pageChange()">
+
                 </div>
             </section>
 
-            <section class="toggle ">
-                <div class="monthly ">Monthly Billing</div>
-                <div class="switch "></div>
-                <div class="yearly ">Yearly Billing</div>
-                <div class="discount ">25% discount</div>
+            <section class="toggle">
+                <div class="monthly">Monthly Billing</div>
+                <div class="switch">
+                    <input type="range" min="2" max="4" value="2" step="2" id="monthslider" onchange="pageChange()">
+                </div>
+                <div class="yearly">Yearly Billing</div>
+                <div class="discount">25% discount</div>
             </section>
 
-            <section class="start ">
-                <div class="pros ">
+            <section class="start">
+                <div class="pros">
                     <ol>
                         <li> Unlimited websites</li>
                         <li>100% data ownership</li>
                         <li>Email reports</li>
                     </ol>
                 </div>
-                <div class="starttrial ">
+                <div class="starttrial">
                     <button>Start my trial</button>
                 </div>
             </section>
