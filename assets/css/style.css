@@ -1,304 +1,354 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    height: 100%;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    background-color: #F2F2F2;
-    background-image: url("../images/bg-pattern.svg");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: auto 400px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    color: #848EAD;
-}
-
-@media only screen and (min-width:768px) {
-    body {
-        background-size: 100%;
-    }
-}
-
-footer {
-    flex-shrink: 0;
-}
-
-.content {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 24px;
-    padding-right: 24px;
-    text-align: center;
-}
-
-header {
-    padding: 89px 0 64px 0;
-    background-image: url("../images/pattern-circles.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-h1 {
-    font-size: 20px;
-    font-weight: 800;
-    color: #293356;
-    margin-bottom: 8px;
-}
-
-.headerparagraph {
-    font-size: 13px;
-    line-height: 23px;
-}
-
-main {
-    background-color: white;
-    box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
-    width: 100%;
-    padding: 34px 24px;
-    box-sizing: border-box;
-}
-
-.interactive {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr;
-    margin-bottom: 34px;
-}
-
-.views {
-    grid-row-start: 1;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.71px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
-
-.slider {
-    grid-row-start: 2;
-}
-
-#priceslider {
-    width: 100%;
-    margin-bottom: 25px;
-}
-
-.price {
-    grid-row-start: 3;
-    font-size: 14px;
-    font-weight: 600;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-#pricenumber {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -0.8px;
-    color: #293356;
-}
-
-input[type=range] {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 8px;
-    background-color: #ECF0FB;
-    border-radius: 5px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #10D8C4;
-    cursor: pointer;
-    background-image: url("../images/icon-slider.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-}
-
-input[type=range]::-webkit-slider-thumb:hover {
-    opacity: 0.5;
-}
-
-input[type=range]::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #10D8C4;
-    cursor: pointer;
-    background-image: url("../images/icon-slider.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0px 7px 20px rgba(0, 255, 231, 0.6);
-}
-
-input[type=range]::-ms-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #10D8C4;
-    cursor: pointer;
-    background-image: url("../images/icon-slider.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-}
-
-@media only screen and (min-width:768px) {
-    .interactive {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-    .views {
-        grid-row-start: 1;
-        grid-column-start: 1;
-    }
-    .slider {
-        grid-row-start: 2;
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    .price {
-        grid-row-start: 1;
-        grid-column-start: 2;
-    }
-}
-
-.toggle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 12px;
-    align-items: center;
-    padding-left: 44px;
-    max-width: 300px;
-    margin: 0 auto;
-    margin-bottom: 38px;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 43px;
-    height: 22px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.round {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #CFD8EF;
-    border-radius: 15px;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.round:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 15px;
-}
-
-#monthslider:checked+.round {
-    background-color: #7AEADF;
-}
-
-input#monthslider:checked+.round:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
-}
-
-.discount {
-    color: #FF8D68;
-    background-color: #FEEDE8;
-    border-radius: 9.5px;
-    font-size: 10px;
-    font-weight: 900;
-    padding: 6px;
-}
-
-hr {
-    border: 1px solid #ECF0FB;
-    margin-right: -24px;
-    margin-left: -24px;
-}
-
-.start {
-    padding-top: 24px;
-    padding-bottom: 32px;
-    font-size: 12px;
-}
-
-ul {
-    list-style-image: url("../images/icon-check.svg");
-    width: 148px;
-    margin: 0 auto;
-}
-
-li {
-    padding: 5px;
-}
-
-button {
-    margin-top: 32px;
-    background-color: #293356;
-    color: #BECDFF;
-    padding: 12px 46px;
-    border-radius: 20.5px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-button:hover {
-    color: white;
-}
-
-footer {
-    padding: 50px;
-    font-size: 12px;
-    text-align: center;
-}
-
-footer a {
-    text-decoration: none;
-    color: #7AEADF;
-}
+                                                                                                                    * {
+                                                                                                                        margin: 0;
+                                                                                                                        padding: 0;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    html,
+                                                                                                                    body {
+                                                                                                                        height: 100%;
+                                                                                                                        box-sizing: border-box;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    body {
+                                                                                                                        display: flex;
+                                                                                                                        flex-direction: column;
+                                                                                                                        background-color: #F2F2F2;
+                                                                                                                        background-image: url("../images/bg-pattern.svg");
+                                                                                                                        background-repeat: no-repeat;
+                                                                                                                        background-position: top left;
+                                                                                                                        background-size: auto 400px;
+                                                                                                                        font-family: 'Manrope', sans-serif;
+                                                                                                                        font-size: 16px;
+                                                                                                                        color: #848EAD;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    @media only screen and (min-width:768px) {
+                                                                                                                        body {
+                                                                                                                            background-size: 100%;
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    footer {
+                                                                                                                        flex-shrink: 0;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .content {
+                                                                                                                        flex: 1 0 auto;
+                                                                                                                        display: flex;
+                                                                                                                        flex-direction: column;
+                                                                                                                        align-items: center;
+                                                                                                                        padding-left: 24px;
+                                                                                                                        padding-right: 24px;
+                                                                                                                        text-align: center;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    header {
+                                                                                                                        padding: 89px 0 64px 0;
+                                                                                                                        background-image: url("../images/pattern-circles.svg");
+                                                                                                                        background-position: center;
+                                                                                                                        background-repeat: no-repeat;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    h1 {
+                                                                                                                        font-size: 20px;
+                                                                                                                        font-weight: 800;
+                                                                                                                        color: #293356;
+                                                                                                                        margin-bottom: 8px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .headerparagraph {
+                                                                                                                        font-size: 13px;
+                                                                                                                        line-height: 23px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    main {
+                                                                                                                        background-color: white;
+                                                                                                                        box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
+                                                                                                                        width: 100%;
+                                                                                                                        padding: 34px 24px;
+                                                                                                                        box-sizing: border-box;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .interactive {
+                                                                                                                        display: grid;
+                                                                                                                        grid-template-columns: 100%;
+                                                                                                                        grid-template-rows: 1fr 1fr 1fr;
+                                                                                                                        margin-bottom: 34px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .views {
+                                                                                                                        grid-row-start: 1;
+                                                                                                                        font-size: 12px;
+                                                                                                                        font-weight: 800;
+                                                                                                                        letter-spacing: 1.71px;
+                                                                                                                        text-transform: uppercase;
+                                                                                                                        margin-bottom: 25px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .slider {
+                                                                                                                        grid-row-start: 2;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    #priceslider {
+                                                                                                                        width: 100%;
+                                                                                                                        margin-bottom: 25px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .price {
+                                                                                                                        grid-row-start: 3;
+                                                                                                                        font-size: 14px;
+                                                                                                                        font-weight: 600;
+                                                                                                                        display: flex;
+                                                                                                                        flex-direction: row;
+                                                                                                                        align-items: center;
+                                                                                                                        justify-content: center;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    #pricenumber {
+                                                                                                                        font-size: 32px;
+                                                                                                                        font-weight: 800;
+                                                                                                                        letter-spacing: -0.8px;
+                                                                                                                        color: #293356;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    input[type=range] {
+                                                                                                                        -webkit-appearance: none;
+                                                                                                                        appearance: none;
+                                                                                                                        height: 8px;
+                                                                                                                        background-color: #ECF0FB;
+                                                                                                                        border-radius: 5px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    input[type=range]::-webkit-slider-thumb {
+                                                                                                                        -webkit-appearance: none;
+                                                                                                                        appearance: none;
+                                                                                                                        width: 40px;
+                                                                                                                        height: 40px;
+                                                                                                                        border-radius: 100%;
+                                                                                                                        background-color: #10D8C4;
+                                                                                                                        cursor: pointer;
+                                                                                                                        background-image: url("../images/icon-slider.svg");
+                                                                                                                        background-position: center;
+                                                                                                                        background-repeat: no-repeat;
+                                                                                                                        box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    input[type=range]::-webkit-slider-thumb:hover {
+                                                                                                                        opacity: 0.5;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    input[type=range]::-moz-range-thumb {
+                                                                                                                        -webkit-appearance: none;
+                                                                                                                        appearance: none;
+                                                                                                                        width: 40px;
+                                                                                                                        height: 40px;
+                                                                                                                        border-radius: 100%;
+                                                                                                                        background-color: #10D8C4;
+                                                                                                                        cursor: pointer;
+                                                                                                                        background-image: url("../images/icon-slider.svg");
+                                                                                                                        background-position: center;
+                                                                                                                        background-repeat: no-repeat;
+                                                                                                                        box-shadow: 0px 7px 20px rgba(0, 255, 231, 0.6);
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    input[type=range]::-ms-thumb {
+                                                                                                                        -webkit-appearance: none;
+                                                                                                                        appearance: none;
+                                                                                                                        width: 40px;
+                                                                                                                        height: 40px;
+                                                                                                                        border-radius: 100%;
+                                                                                                                        background-color: #10D8C4;
+                                                                                                                        cursor: pointer;
+                                                                                                                        background-image: url("../images/icon-slider.svg");
+                                                                                                                        background-position: center;
+                                                                                                                        background-repeat: no-repeat;
+                                                                                                                        box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    @media only screen and (min-width:768px) {
+                                                                                                                        .interactive {
+                                                                                                                            grid-template-columns: 1fr 1fr;
+                                                                                                                            grid-template-rows: 1fr 1fr;
+                                                                                                                        }
+                                                                                                                        .views {
+                                                                                                                            grid-row-start: 1;
+                                                                                                                            grid-column-start: 1;
+                                                                                                                        }
+                                                                                                                        .slider {
+                                                                                                                            grid-row-start: 2;
+                                                                                                                            grid-column-start: 1;
+                                                                                                                            grid-column-end: 3;
+                                                                                                                        }
+                                                                                                                        .price {
+                                                                                                                            grid-row-start: 1;
+                                                                                                                            grid-column-start: 2;
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .toggle {
+                                                                                                                        display: flex;
+                                                                                                                        flex-direction: row;
+                                                                                                                        justify-content: space-around;
+                                                                                                                        font-size: 12px;
+                                                                                                                        align-items: center;
+                                                                                                                        padding-left: 44px;
+                                                                                                                        max-width: 300px;
+                                                                                                                        margin: 0 auto;
+                                                                                                                        margin-bottom: 38px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .switch {
+                                                                                                                        position: relative;
+                                                                                                                        display: inline-block;
+                                                                                                                        width: 43px;
+                                                                                                                        height: 22px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .switch input {
+                                                                                                                        opacity: 0;
+                                                                                                                        width: 0;
+                                                                                                                        height: 0;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .round {
+                                                                                                                        position: absolute;
+                                                                                                                        cursor: pointer;
+                                                                                                                        top: 0;
+                                                                                                                        left: 0;
+                                                                                                                        right: 0;
+                                                                                                                        bottom: 0;
+                                                                                                                        background-color: #CFD8EF;
+                                                                                                                        border-radius: 15px;
+                                                                                                                        -webkit-transition: .4s;
+                                                                                                                        transition: .4s;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .round:before {
+                                                                                                                        position: absolute;
+                                                                                                                        content: "";
+                                                                                                                        height: 14px;
+                                                                                                                        width: 14px;
+                                                                                                                        left: 4px;
+                                                                                                                        bottom: 4px;
+                                                                                                                        background-color: white;
+                                                                                                                        -webkit-transition: .4s;
+                                                                                                                        transition: .4s;
+                                                                                                                        border-radius: 15px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    #monthslider:checked+.round {
+                                                                                                                        background-color: #7AEADF;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    input#monthslider:checked+.round:before {
+                                                                                                                        -webkit-transform: translateX(20px);
+                                                                                                                        -ms-transform: translateX(20px);
+                                                                                                                        transform: translateX(20px);
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .discount {
+                                                                                                                        color: #FF8D68;
+                                                                                                                        background-color: #FEEDE8;
+                                                                                                                        border-radius: 9.5px;
+                                                                                                                        font-size: 10px;
+                                                                                                                        font-weight: 900;
+                                                                                                                        padding: 6px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    hr {
+                                                                                                                        border: 1px solid #ECF0FB;
+                                                                                                                        margin-right: -24px;
+                                                                                                                        margin-left: -24px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    .start {
+                                                                                                                        padding-top: 24px;
+                                                                                                                        padding-bottom: 32px;
+                                                                                                                        font-size: 12px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    ul {
+                                                                                                                        list-style-image: url("../images/icon-check.svg");
+                                                                                                                        width: 148px;
+                                                                                                                        margin: 0 auto;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    li {
+                                                                                                                        padding: 5px;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    button {
+                                                                                                                        margin-top: 32px;
+                                                                                                                        background-color: #293356;
+                                                                                                                        color: #BECDFF;
+                                                                                                                        padding: 12px 46px;
+                                                                                                                        border-radius: 20.5px;
+                                                                                                                        border: none;
+                                                                                                                        outline: none;
+                                                                                                                        cursor: pointer;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    button:hover {
+                                                                                                                        color: white;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    footer {
+                                                                                                                        padding: 50px;
+                                                                                                                        font-size: 12px;
+                                                                                                                        text-align: center;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    footer a {
+                                                                                                                        text-decoration: none;
+                                                                                                                        color: #7AEADF;
+                                                                                                                    }
+                                                                                                                    /*==========================================================================Desktop==========================================*/
+                                                                                                                    
+                                                                                                                    @media only screen and (min-width:768px) {
+                                                                                                                        header {
+                                                                                                                            padding: 104px 0 91px 0;
+                                                                                                                        }
+                                                                                                                        h1 {
+                                                                                                                            font-size: 28px;
+                                                                                                                            margin-bottom: 12px;
+                                                                                                                        }
+                                                                                                                        .headerparagraph {
+                                                                                                                            font-size: 15px;
+                                                                                                                        }
+                                                                                                                        main {
+                                                                                                                            max-width: 540px;
+                                                                                                                            margin: 0 auto;
+                                                                                                                            padding: 40px 48px 32px 48px;
+                                                                                                                        }
+                                                                                                                        .interactive {
+                                                                                                                            margin-bottom: 41px;
+                                                                                                                            align-items: center;
+                                                                                                                        }
+                                                                                                                        .views {
+                                                                                                                            margin-bottom: 0px;
+                                                                                                                        }
+                                                                                                                        #pricenumber {
+                                                                                                                            font-size: 40px;
+                                                                                                                            letter-spacing: -1px;
+                                                                                                                        }
+                                                                                                                        .toggle {
+                                                                                                                            justify-content: space-between;
+                                                                                                                            max-width: 400px;
+                                                                                                                            margin-left: 70px;
+                                                                                                                        }
+                                                                                                                        hr {
+                                                                                                                            border: 1px solid #ECF0FB;
+                                                                                                                            margin-right: -46px;
+                                                                                                                            margin-left: -46px;
+                                                                                                                        }
+                                                                                                                        .start {
+                                                                                                                            padding: 32px 0px;
+                                                                                                                            display: flex;
+                                                                                                                            flex-direction: row;
+                                                                                                                            justify-content: space-between;
+                                                                                                                            text-align: left;
+                                                                                                                        }
+                                                                                                                        .pros {
+                                                                                                                            margin-left: 9px;
+                                                                                                                        }
+                                                                                                                    }
