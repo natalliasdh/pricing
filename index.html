@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Interactive pricing component</title>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <h1>Simple, traffic-based pricing</h1>
+            <p class="headerparagraph">Sign-up for our 30-day trial. No credit card required.</p>
+        </header>
+        <main>
+            <section class="interactive">
+                <div class="views"><span id="pageviews"></span> Pageviews</div>
+                <div class="price"><span id="pricenumber"></span>$ /month</div>
+                <div class="slider">
+                    <input type="range" min="1" max="9" step="2" value="5" id="priceslider" ">
+       
+                </div>
+            </section>
+
+            <section class="toggle ">
+                <div class="monthly ">Monthly Billing</div>
+                <div class="switch "></div>
+                <div class="yearly ">Yearly Billing</div>
+                <div class="discount ">25% discount</div>
+            </section>
+
+            <section class="start ">
+                <div class="pros ">
+                    <ol>
+                        <li> Unlimited websites</li>
+                        <li>100% data ownership</li>
+                        <li>Email reports</li>
+                    </ol>
+                </div>
+                <div class="starttrial ">
+                    <button>Start my trial</button>
+                </div>
+            </section>
+        </main>
+
+    </div>
+    <footer>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge " target="_blank ">Frontend Mentor</a>. Coded by Natallia Harmon.
+    </footer>
+    <script src="assets/scripts/slider.js "></script>
+</body>
+
+</html>
