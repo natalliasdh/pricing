@@ -10,7 +10,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Use the slider and toggle to see prices for different page view numbers
 
-the different page view ranges and the corresponding monthly price totals:
+The different page view ranges and the corresponding monthly price totals:
 
 - 10K pageviews / $8 per month
 - 50K pageviews / $12 per month
