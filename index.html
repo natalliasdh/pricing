@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
     <title>Frontend Mentor | Interactive pricing component</title>
 </head>
 
@@ -17,29 +21,31 @@
         <main>
             <section class="interactive">
                 <div class="views"><span id="pageviews">100K</span> Pageviews</div>
-                <div class="price"><span id="pricenumber">16</span>$ /month</div>
+                <div class="price"><span id="pricenumber">16.00$</span>&nbsp;&nbsp;/month</div>
                 <div class="slider">
                     <input type="range" min="1" max="9" step="2" value="5" id="priceslider" onchange="pageChange()">
+
 
                 </div>
             </section>
 
             <section class="toggle">
                 <div class="monthly">Monthly Billing</div>
-                <div class="switch">
-                    <input type="range" min="2" max="4" value="2" step="2" id="monthslider" onchange="pageChange()">
-                </div>
+                <label class="switch">
+                    <input type="checkbox" id="monthslider" onchange="pageChange()">
+                    <span class="round"></span>
+                </label>
                 <div class="yearly">Yearly Billing</div>
-                <div class="discount">25% discount</div>
+                <div class="discount"></div>
             </section>
-
+            <hr>
             <section class="start">
                 <div class="pros">
-                    <ol>
+                    <ul>
                         <li> Unlimited websites</li>
                         <li>100% data ownership</li>
                         <li>Email reports</li>
-                    </ol>
+                    </ul>
                 </div>
                 <div class="starttrial">
                     <button>Start my trial</button>
@@ -52,6 +58,7 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge " target="_blank ">Frontend Mentor</a>. Coded by Natallia Harmon.
     </footer>
     <script src="assets/scripts/slider.js "></script>
+    <script src="assets/scripts/media.js "></script>
 </body>
 
 </html>

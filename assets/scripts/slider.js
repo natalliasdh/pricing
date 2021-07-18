@@ -37,9 +37,9 @@ function pageChange() {
 };
 
 function priceCounter(price) {
-    if (monthSlider.value == "2") {
-        priceNumber.textContent = price;
+    if (monthSlider.checked == false) {
+        priceNumber.textContent = price.toFixed(2) + "$";
     } else {
-        priceNumber.textContent = (price * 0.85).toFixed(0);
+        priceNumber.textContent = (price * 0.85).toFixed(2) + "$";
     }
 }
